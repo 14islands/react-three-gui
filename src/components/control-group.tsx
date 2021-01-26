@@ -4,9 +4,9 @@ import { ControlItem } from './control-item';
 
 const Heading = styled.h2<{ open: boolean }>`
   display: block;
-  font-family: sans-serif;
-  font-size: 13px;
-  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: normal;
   padding-left: 16px;
   cursor: pointer;
   position: relative;
@@ -20,8 +20,8 @@ const Heading = styled.h2<{ open: boolean }>`
     right: 16px;
     width: 12px;
     height: 2px;
-    background-color: #333;
-    /* transition: transform 0.25s ease-out; */
+    background-color: #fff;
+    transition: transform 0.25s ease-out;
   }
   &:before {
     transform: rotate(${props => (props.open ? 0 : 90)}deg);
@@ -33,7 +33,7 @@ const Heading = styled.h2<{ open: boolean }>`
 `;
 
 const Container = styled.div<{ open: boolean; bg: boolean }>`
-  background: ${props => (props.bg ? '#f9f9f9' : '#fff')};
+  background: ${props => (props.bg ? '#fff' : '#000')};
   padding: 16px;
   display: ${props => (props.open ? 'block' : 'none')};
   margin-bottom: 8px;

@@ -78,6 +78,8 @@ const Float = styled(animated.div)<FloatProps>`
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+  font-family: 'sans-serif';
+  font-size: 16px;
 
   ${mq} {
     transform: none !important;
@@ -97,24 +99,29 @@ const Header = styled(animated.div)<{ 'data-collapsed': boolean }>`
   padding-left: 16px;
   padding-right: 16px;
   height: 42px;
-  font-family: sans-serif;
-  font-size: 14px;
+  font-family: inherit;
+  font-size: 20px;
   color: #fff;
   cursor: move;
   cursor: grab;
   user-select: none;
   background-color: #000;
-  border-top-left-radius: 8px;
+  /* border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom-left-radius: ${props => (props['data-collapsed'] ? 0 : 8)}px;
-  border-bottom-right-radius: ${props => (props['data-collapsed'] ? 0 : 8)}px;
+  border-bottom-right-radius: ${props => (props['data-collapsed'] ? 0 : 8)}px; */
   box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.14);
+
+  border-bottom: ${props => (props['data-collapsed'] ? 1 : 0)}px solid rgba(255,255,255,0.4);
   ${mq} {
-    border-top-left-radius: 0px;
+    border-top: ${props => (props['data-collapsed'] ? 1 : 0)}px solid rgba(255,255,255,0.4);
+    /* border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-right-radius: 0px; */
+    border-bottom: none;
   }
+  flex: none;
 `;
 
 const CollapseIcon = styled.div<{ collapsed: boolean }>`
@@ -125,24 +132,25 @@ const CollapseIcon = styled.div<{ collapsed: boolean }>`
   justify-content: center;
   margin-left: auto;
   cursor: pointer;
+  &:before,
   &:after {
     content: '';
-    display: block;
-    height: 3px;
-    width: 16px;
-    background-color: white;
+    position: absolute;
+    top: 19px;
+    right: 16px;
+    width: 12px;
+    height: 2px;
+    background-color: #fff;
+    transition: transform 0.25s ease-out;
   }
-  ${mq} {
-    &:before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-    }
+  &:before {
+    transform: rotate(${props => (props.collapsed ? 0 : 90)}deg);
   }
+
+  &:after {
+    transform: rotate(${props => (props.collapsed ? 0 : 180)}deg);
+  }
+  
 `;
 
 const Items = styled(animated.div)`
@@ -241,11 +249,11 @@ export const Controls: ControlsFn = (props: ControlsProps) => {
         ),
       }}
     >
-      <Header data-collapsed={collapsed} {...bind()}>
+      <Header data-collapsed={collapsed} {...bind()} onClick={() => setCollapsed((c: boolean) => !c)}>
         {title}
         <CollapseIcon
           collapsed={collapsed}
-          onClick={() => setCollapsed((c: boolean) => !c)}
+          
         />
       </Header>
       <Items

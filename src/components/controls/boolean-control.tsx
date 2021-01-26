@@ -37,8 +37,9 @@ const Checkbox = styled.input`
     transform: translate(0px, 0px) rotate(-45deg);
   }
   &:checked + ${FakeCheckbox} {
-    background: rgba(0, 0, 0, 0.045);
-    border-color: rgba(0, 0, 0, 0.085);
+    background: rgba(0, 0, 0, 1.0);
+    border-color: rgba(255, 255, 255, 1);
+    
   }
 `;
 

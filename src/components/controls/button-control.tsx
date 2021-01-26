@@ -5,9 +5,8 @@ import { ControlComponentProps, ControlOptionsButton } from '../../types';
 const Button = styled.button`
   display: block;
 
-  font-family: sans-serif;
+  font-family: inherit;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
 
   display: block;
   position: relative;
@@ -15,11 +14,11 @@ const Button = styled.button`
   width: 100%;
   height: 32px;
 
-  color: #000;
+  color: currentColor;
 
   border: 0;
-  background-color: rgba(0, 0, 0, 0.045);
-  border-radius: 4px;
+  background-color: #232323;
+  /* border-radius: 4px; */
   padding: 0 4px;
 `;
 

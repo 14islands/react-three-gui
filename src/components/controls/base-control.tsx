@@ -4,6 +4,7 @@ import styled from 'styled-components';
 type SCProps = {
   stack?: boolean;
   flexLabel?: boolean;
+  invertedLabel?: boolean;
 };
 
 const Row = styled.div`
@@ -13,14 +14,14 @@ const Row = styled.div`
   padding: 8px 0;
 `;
 
-const Label = styled.label<SCProps>`
+export const Label = styled.label<SCProps>`
   display: flex;
-  font-family: sans-serif;
+  font-family: inherit;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.4);
   width: 56px;
   user-select: none;
   ${props => (props.flexLabel === true ? 'flex: 1;' : '')}
+  ${props => (props.invertedLabel === true ? 'color: #fff;' : 'color: #000')}
 `;
 
 const Content = styled.div<SCProps>`
@@ -32,10 +33,10 @@ const Content = styled.div<SCProps>`
 
 const Value = styled.div<SCProps>`
   display: flex;
-  font-family: sans-serif;
+  font-family: inherit;
   white-space: nowrap;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.75);
+  color: #000;
   justify-content: flex-end;
   ${props => (props.stack ? 'flex: 1;' : '')}
   ${props => (props.stack ? '' : 'width: 42px;')}
@@ -48,6 +49,7 @@ type BaseControlProps = {
   children?: any;
   stack?: boolean;
   htmlFor?: any;
+  invertedLabel?: boolean;
 };
 
 export function BaseControl({
@@ -57,12 +59,13 @@ export function BaseControl({
   value,
   stack,
   children,
+  invertedLabel
 }: BaseControlProps) {
   if (stack) {
     return (
       <div>
         <Row>
-          <Label flexLabel={flexLabel}>{label}</Label>
+          <Label flexLabel={flexLabel} invertedLabel={invertedLabel}>{label}</Label>
           <Value stack flexLabel={flexLabel}>
             {value}
           </Value>
@@ -74,7 +77,7 @@ export function BaseControl({
 
   return (
     <Row>
-      <Label flexLabel={flexLabel} htmlFor={htmlFor}>
+      <Label flexLabel={flexLabel} invertedLabel={invertedLabel} htmlFor={htmlFor}>
         {label}
       </Label>
       <Content flexLabel={flexLabel}>{children}</Content>

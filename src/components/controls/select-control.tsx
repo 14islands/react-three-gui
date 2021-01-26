@@ -6,7 +6,7 @@ import { ControlComponentProps, ControlOptionsSelect } from '../../types';
 const Select = styled.select`
   display: block;
 
-  font-family: sans-serif;
+  font-family: inherit;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.4);
 
