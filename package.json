@@ -13,8 +13,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "tsdx lint",
-    "postinstall": "yarn build"
+    "lint": "tsdx lint"
   },
   "peerDependencies": {
     "react": ">=16",
@@ -27,7 +26,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/jest": "^26.0.10",
     "@types/react": "^16.9.48",
     "@types/react-color": "^3.0.1",
@@ -42,7 +41,9 @@
     "three": "^0.120.0",
     "tsdx": "^0.13.3",
     "tslib": "^2.0.1",
-    "typescript": "^4.0.2",
+    "typescript": "^4.0.2"
+  },
+  "dependencies": {
     "@react-spring/three": "^9.0.0-rc.3",
     "@react-spring/web": "^9.0.0-rc.3",
     "react-color": "^2.18.1",
