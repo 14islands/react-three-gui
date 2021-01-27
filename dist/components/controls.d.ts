@@ -30,6 +30,7 @@ export interface ControlsProps {
      * Styles
      */
     style?: any;
+    className?: string;
 }
 interface ControlsFn {
     (props: ControlsProps): JSX.Element;

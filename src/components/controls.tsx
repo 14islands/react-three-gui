@@ -54,6 +54,7 @@ export interface ControlsProps {
    * Styles
    */
   style?: any;
+  className?: string;
 }
 
 function posProps(positions: ControlsAnchor[]) {
@@ -181,6 +182,7 @@ export const Controls: ControlsFn = (props: ControlsProps) => {
     width = 300,
     style = {},
     anchor = ControlsAnchor.TOP_RIGHT,
+    className = ''
   } = props;
   const { controls } = useContext(ControlsContext);
   const [collapsed, setCollapsed] = useLocalStorage(
@@ -248,6 +250,7 @@ export const Controls: ControlsFn = (props: ControlsProps) => {
           ([x, y]) => `translate3d(${x}px,${y}px,0)` as any
         ),
       }}
+      className={className}
     >
       <Header data-collapsed={collapsed} {...bind()} onClick={() => setCollapsed((c: boolean) => !c)}>
         {title}

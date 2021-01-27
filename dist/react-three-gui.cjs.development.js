@@ -987,7 +987,9 @@ var Controls = function Controls(props) {
       _props$style = props.style,
       style = _props$style === void 0 ? {} : _props$style,
       _props$anchor = props.anchor,
-      anchor = _props$anchor === void 0 ? ControlsAnchor.TOP_RIGHT : _props$anchor;
+      anchor = _props$anchor === void 0 ? ControlsAnchor.TOP_RIGHT : _props$anchor,
+      _props$className = props.className,
+      className = _props$className === void 0 ? '' : _props$className;
 
   var _useContext = React.useContext(ControlsContext),
       controls = _useContext.controls;
@@ -1049,7 +1051,8 @@ var Controls = function Controls(props) {
             y = _ref3[1];
         return "translate3d(" + x + "px," + y + "px,0)";
       })
-    })
+    }),
+    className: className
   }, React__default.createElement(Header, Object.assign({
     "data-collapsed": collapsed
   }, bind(), {
