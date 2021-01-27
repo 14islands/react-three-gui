@@ -947,7 +947,11 @@ function posProps(positions) {
   };
 }
 
-var Float = /*#__PURE__*/styled(web.animated.div)( /*#__PURE__*/_templateObject$9(), /*#__PURE__*/posProps([ControlsAnchor.TOP_LEFT, ControlsAnchor.TOP_RIGHT]), /*#__PURE__*/posProps([ControlsAnchor.BOTTOM_RIGHT, ControlsAnchor.TOP_RIGHT]), /*#__PURE__*/posProps([ControlsAnchor.BOTTOM_RIGHT, ControlsAnchor.BOTTOM_LEFT]), /*#__PURE__*/posProps([ControlsAnchor.TOP_LEFT, ControlsAnchor.BOTTOM_LEFT]), function (props) {
+var Float = /*#__PURE__*/styled(web.animated.div).attrs(function (props) {
+  return {
+    className: props.className
+  };
+})( /*#__PURE__*/_templateObject$9(), /*#__PURE__*/posProps([ControlsAnchor.TOP_LEFT, ControlsAnchor.TOP_RIGHT]), /*#__PURE__*/posProps([ControlsAnchor.BOTTOM_RIGHT, ControlsAnchor.TOP_RIGHT]), /*#__PURE__*/posProps([ControlsAnchor.BOTTOM_RIGHT, ControlsAnchor.BOTTOM_LEFT]), /*#__PURE__*/posProps([ControlsAnchor.TOP_LEFT, ControlsAnchor.BOTTOM_LEFT]), function (props) {
   return props['data-width'];
 }, mq);
 var Header = /*#__PURE__*/styled(web.animated.div)( /*#__PURE__*/_templateObject2$4(), function (props) {

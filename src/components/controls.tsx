@@ -63,7 +63,7 @@ function posProps(positions: ControlsAnchor[]) {
   };
 }
 
-const Float = styled(animated.div)<FloatProps>`
+const Float = styled(animated.div).attrs((props?: any) => ({ className: props.className }))<FloatProps>`
   display: flex;
   flex-direction: column;
   position: fixed;
