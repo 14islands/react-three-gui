@@ -232,7 +232,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteralLoose(["\n  display: flex;\n  font-family: inherit;\n  font-size: 14px;\n  width: 56px;\n  user-select: none;\n  ", "\n  ", "\n"]);
+  var data = _taggedTemplateLiteralLoose(["\n  display: flex;\n  font-family: inherit;\n  font-size: 14px;\n  min-width: 100px;\n  user-select: none;\n  ", "\n  ", "\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;

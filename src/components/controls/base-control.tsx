@@ -18,7 +18,7 @@ export const Label = styled.label<SCProps>`
   display: flex;
   font-family: inherit;
   font-size: 14px;
-  width: 56px;
+  min-width: 100px;
   user-select: none;
   ${props => (props.flexLabel === true ? 'flex: 1;' : '')}
   ${props => (props.invertedLabel === true ? 'color: #fff;' : 'color: #000')}
